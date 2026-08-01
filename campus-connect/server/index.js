@@ -1,14 +1,14 @@
 const express = require("express");
 const cors = require("cors");
 
+const homeRoutes = require("./routes/homeRoutes");
+
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
-    res.send("Campus Connect Backend Running...");
-});
+app.use("/", homeRoutes);
 
 const PORT = 5000;
 
